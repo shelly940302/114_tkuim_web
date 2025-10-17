@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的網站 - Bootstrap 5</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- 導航列 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">我的網站</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">首頁</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">關於</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">服務</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">聯絡</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主要內容 -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="bg-dark py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold">歡迎來到我的網站</h1>
+            <p class="lead">這是一個示範網頁，展示如何從基本 HTML 導入 Bootstrap 5。</p>
+            <button class="btn btn-success btn-lg">了解更多</button>
+          </div>
+          <div class="col-lg-6">
+            <img src="data:image/jpeg;base64,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" class="img-fluid rounded" alt="Hero Image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">關於我們</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="display-4 text-primary mb-3">🎯</div>
+                <h3 class="card-title">專業</h3>
+                <p class="card-text">提供專業的網頁設計服務</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="display-4 text-primary mb-3">💡</div>
+                <h3 class="card-title">創新</h3>
+                <p class="card-text">採用最新的技術和設計趨勢</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="display-4 text-primary mb-3">⭐</div>
+                <h3 class="card-title">品質</h3>
+                <p class="card-text">確保每個專案都達到最高標準</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">我們的服務</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <ul class="list-group">
+              <li class="list-group-item">✅ 網頁設計</li>
+              <li class="list-group-item">✅ 響應式開發</li>
+              <li class="list-group-item">✅ SEO 優化</li>
+              <li class="list-group-item">✅ 維護服務</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">聯絡我們</h2>
+        <div class="row">
+          <div class="col-lg-6 mx-auto">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">姓名</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">訊息</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">送出</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-0">&copy; 2024 我的網站. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JavaScript Bundle (包含 Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

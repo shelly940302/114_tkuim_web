@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>會員註冊表單</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>會員註冊</h1>
+    <p class="subtitle">請填寫以下資料以完成註冊</p>
+
+    <form id="signupForm" novalidate>
+      <label>
+        姓名：
+        <input id="name" required aria-describedby="name-error" placeholder="請輸入姓名">
+      </label>
+      <p id="name-error" class="error" aria-live="polite"></p>
+
+      <label>
+        Email：
+        <input id="email" type="email" required aria-describedby="email-error" placeholder="example@email.com">
+      </label>
+      <p id="email-error" class="error" aria-live="polite"></p>
+
+      <label>
+        手機：
+        <input id="phone" required aria-describedby="phone-error" placeholder="例如：0912345678">
+      </label>
+      <p id="phone-error" class="error" aria-live="polite"></p>
+
+      <label>
+        密碼：
+        <input id="password" type="password" required aria-describedby="password-error" placeholder="至少 8 碼，含英文與數字">
+      </label>
+      <p id="password-error" class="error" aria-live="polite"></p>
+
+      <label>
+        確認密碼：
+        <input id="confirmPassword" type="password" required aria-describedby="confirmPassword-error" placeholder="再次輸入密碼">
+      </label>
+      <p id="confirmPassword-error" class="error" aria-live="polite"></p>
+
+      <fieldset id="interests">
+        <legend>興趣：</legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="basketball"> 打籃球</label>
+          <label><input type="checkbox" value="pingpong"> 打桌球</label>
+          <label><input type="checkbox" value="badminton"> 打羽球</label>
+        </div>
+      </fieldset>
+      <p id="interests-error" class="error" aria-live="polite"></p>
+      
+      <div class="terms-container">
+        <label class="terms-label" for="terms">
+          <input id="terms" type="checkbox" required aria-describedby="terms-error">
+          我同意服務條款
+        </label>
+      </div>
+      <p id="terms-error" class="error" aria-live="polite"></p>
+
+      <button type="submit">送出</button>
+    </form>
+  </div>
+
+  <script src="signup_form.js"></script>
+</body>
+</ht

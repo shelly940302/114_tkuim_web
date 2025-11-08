@@ -1,0 +1,136 @@
+body {
+  font-family: "Microsoft JhengHei", sans-serif;
+  background: linear-gradient(180deg, #fff9e6 0%, #fffdf6 100%);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* keep header at top */
+  align-items: stretch;        /* let content fill horizontal space */
+  min-height: 100vh;
+}
+
+.container {
+  /* keep .container available for small inner layouts - keep default behavior */
+  text-align: center;
+}
+
+.app-container {
+  width: 100%;
+  padding: 28px 20px;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.app-inner {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid layout for main interactive area: left controls, right result */
+.app-grid {
+  display: grid;
+  /* make left column wider so checkbox area has room (min 320px, up to 420px) */
+  grid-template-columns: minmax(320px,420px) 1fr;
+  gap: 22px;
+  align-items: start;
+}
+@media (max-width: 900px){
+  .app-grid { grid-template-columns: 1fr; }
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Only style plain buttons (not Bootstrap .btn) to avoid overriding Bootstrap defaults */
+button:not(.btn) {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffb84d;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:not(.btn):hover {
+  background-color: #ff9900;
+}
+
+/* style the fallback backBtn if not using .btn classes */
+#backBtn:not(.btn) {
+  background-color: #ccc;
+  margin-top: 10px;
+}
+
+.ingredients-box {
+  text-align: left;
+  margin-top: 15px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-left: 18px; /* ensure checkboxes are visible and not clipped */
+  box-sizing: border-box;
+}
+
+.ingredients-box label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.recipe-result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #bf6000;
+  text-align: left;
+}
+
+/* Tweak card appearance */
+.card {
+  border: none;
+  border-radius: 14px;
+}
+.card .container {
+  padding: 0;
+}
+
+/* Ensure header stays above content when sticky */
+header.sticky-top { z-index: 1030; }
+
+/* Give main area some top spacing so content isn't hidden behind header on small screens */
+main { width: 100%; padding-top: 0.75rem; }
+
+/* style the topMenu bar so nav buttons are visible and separated from header title */
+#topMenu { background: #ffd97a; padding: 0.35rem 0.5rem; }
+#topMenu .main-menu { max-width: 1200px; margin: 0 auto; }
+#topMenu .btn { white-space: nowrap; }
+
+/* Make checkbox area look cleaner */
+.ingredients-box { padding: 6px 4px; }
+.ingredients-box .form-check { padding: 6px 12px; border-radius:6px; display:flex; align-items:center; gap:12px; }
+.ingredients-box .form-check:hover { background: rgba(255,184,77,0.06); }
+.ingredients-box .form-check-input { flex: 0 0 auto; margin-left: 0; }
+.ingredients-box .form-check-label { margin: 0; }
+
+/* Button group helpers */
+.btn-row { display:flex; gap:0.5rem; }
+.btn-row .btn { flex:1; }
+
+/* Fade-in animation for results */
+.fade-in {
+  animation: fadeIn 350ms ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Small responsive tweaks */
+@media (max-width: 576px) {
+  .container { padding: 20px; border-radius: 12px; }
+}

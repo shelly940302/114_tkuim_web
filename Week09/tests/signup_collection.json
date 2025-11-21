@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "9350994a-c5ae-4d61-b42d-3f0129f9fe18",
+		"name": "Week09 Signup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50235909",
+		"_collection_link": "https://s0966513820-8614714.postman.co/workspace/%E6%9D%8E%E6%80%A1%E8%90%B1's-Workspace~5996af4e-ef8a-4970-81fd-42001a8b56e8/collection/50235909-9350994a-c5ae-4d61-b42d-3f0129f9fe18?action=share&source=collection_link&creator=50235909"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('狀態碼 201', () => pm.response.code === 201);\r",
+							"pm.expect(pm.response.json()).to.have.property('participant');\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"測試同學\",\r\n  \"email\": \"test@example.com\",\r\n  \"phone\": \"0912345678\",\r\n  \"password\": \"abc12345\",\r\n  \"confirmPassword\": \"abc12345\",\r\n  \"interests\": [\"前端\", \"後端\"],\r\n  \"terms\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}} = http://localhost:3001",
+					"protocol": "{{baseUrl}} = http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001"
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": ""
+		}
+	]
+}

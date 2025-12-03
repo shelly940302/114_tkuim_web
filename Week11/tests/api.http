@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:3001/api
+@contentType = application/json
+
+### 建立報名 
+# @name createOne
+POST {{baseUrl}}/signup
+Content-Type: {{contentType}}
+
+{
+  "name": "新同學",
+  "email": "new@example.com",
+  "phone": "0911222333"
+}
+
+### 定義變數 (自動從上面 createOne 的回應中抓取 id)
+@last_id = {{createOne.response.body.id}}
+
+### 驗證 Email 重複 (再次執行相同的 POST)
+POST {{baseUrl}}/signup
+Content-Type: {{contentType}}
+
+{
+  "name": "新同學",
+  "email": "new@example.com",
+  "phone": "0911222333"
+}
+
+### 取得清單
+GET {{baseUrl}}/signup
+
+### 取得清單 (分頁測試)
+GET {{baseUrl}}/signup?page=1&limit=5
+
+### 更新 (自動帶入剛剛建立的 ID)
+PATCH {{baseUrl}}/signup/{{last_id}}
+Content-Type: {{contentType}}
+
+{
+  "phone": "0911000111"
+}
+
+### 刪除 (自動帶入剛剛建立的 ID)
+DELETE {{baseUrl}}/signup/{{last_id}}
